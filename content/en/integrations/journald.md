@@ -18,6 +18,7 @@ further_reading:
     - link: "logs/guide/docker-logs-collection-troubleshooting-guide"
       tag: "Documentation"
       text: "Docker Log Collection"
+integration_id: "journald"
 ---
 
 ## Overview
