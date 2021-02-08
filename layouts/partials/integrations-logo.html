@@ -1,0 +1,48 @@
+{{- $dot := . -}}
+{{- $ctx := .context -}}
+{{- $basename := .basename -}}
+{{- $variant := .variant | default "_large" -}}
+{{- $extension := .extension | default ".svg" -}}
+{{- $img_url := $ctx.Site.Params.integrations_img_url -}}
+{{- $imagesJSON := getJSON "https://s3.amazonaws.com/origin-static-assets/websites-integrations/images.json" -}}
+{{- $integrationLogosList := index $imagesJSON "integrationLogosList" | default slice -}}
+{{- $output_image := "" -}}
+{{- $imageExists := false -}}
+
+<!--{{/* Check the exact image we want exists using external list */}}-->
+{{- range $manifestBasename := $integrationLogosList -}}
+  {{- if eq $basename $manifestBasename -}}
+    {{- $imageExists = true -}}
+  {{- end -}}
+{{- end -}}
+
+<!--{{/* Lets check for an amazon naming scheme */}}-->
+{{- if not $imageExists -}}
+  {{- range $manifestBasename := $integrationLogosList -}}
+    {{- if eq (print "amazon-" $basename) $manifestBasename -}}
+      {{- $imageExists = true -}}
+      {{- $basename = (print "amazon-" $basename) }}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+
+<!--{{/* Lets check for an aws naming scheme */}}-->
+{{- if not $imageExists -}}
+  {{- range $manifestBasename := $integrationLogosList -}}
+    {{- if eq (print "aws-" $basename) $manifestBasename -}}
+      {{- $imageExists = true -}}
+      {{- $basename = (print "aws-" $basename) }}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+
+<!--{{/* Build the image path and return it or return empty string */}}-->
+{{- if $imageExists -}}
+    {{- $output_image = (printf "%s%s_%s%s" $img_url $basename $variant $extension) | safeURL -}}
+{{- else -}}
+    {{- if eq $ctx.Page.Language.Lang "en" -}}
+      {{- warnf "missing integration logo %q called from %q" $basename $ctx.Page.Permalink -}}
+    {{- end -}}
+    {{- $output_image = "" -}}
+{{- end -}}
+{{- return $output_image -}}

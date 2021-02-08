@@ -1,6 +1,11 @@
 import { stringToTitleCase } from '../helpers/string';
 
 export function initializeSecurityRules() {
+
+    if (!document.body.classList.contains('security_monitoring')) {
+      return
+    }
+
     const inputSearch = document.querySelector('[data-ref="search"]');
     const controls = document.querySelector('[data-ref="controls"]');
     const allGroupHeaders = Array.prototype.slice.call(document.getElementsByClassName('js-group-header') || []);
@@ -92,11 +97,11 @@ export function initializeSecurityRules() {
         })
     }
 
-    const handleCategoryFilterClick = (event) => {       
+    const handleCategoryFilterClick = (event) => {
         // If button is already active, or an operation is in progress, ignore the click
         if (event.target.classList.contains('active') || !event.target.getAttribute('data-filter'))
             return;
-            
+
         const searchValue = inputSearch.value.length > 2 ? inputSearch.value.toLowerCase().trim() : '';
         const filtered = filterResults(event.target.dataset.filter, searchValue);
         activateButton(event.target, filters);
