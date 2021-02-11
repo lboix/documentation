@@ -1,7 +1,7 @@
 {{- $dot := . -}}
 {{- $ctx := .context -}}
 {{- $basename := .basename -}}
-{{- $variant := .variant | default "_large" -}}
+{{- $variant := .variant | default "large" -}}
 {{- $extension := .extension | default ".svg" -}}
 {{- $img_url := $ctx.Site.Params.integrations_img_url -}}
 {{- $imagesJSON := getJSON "https://s3.amazonaws.com/origin-static-assets/websites-integrations/images.json" -}}
@@ -16,7 +16,7 @@
   {{- end -}}
 {{- end -}}
 
-<!--{{/* Lets check for an amazon naming scheme */}}-->
+<!--{{/* Lets check for an amazon naming scheme amazon-??? */}}-->
 {{- if not $imageExists -}}
   {{- range $manifestBasename := $integrationLogosList -}}
     {{- if eq (print "amazon-" $basename) $manifestBasename -}}
@@ -26,7 +26,7 @@
   {{- end -}}
 {{- end -}}
 
-<!--{{/* Lets check for an aws naming scheme */}}-->
+<!--{{/* Lets check for an aws naming scheme aws-???? */}}-->
 {{- if not $imageExists -}}
   {{- range $manifestBasename := $integrationLogosList -}}
     {{- if eq (print "aws-" $basename) $manifestBasename -}}
