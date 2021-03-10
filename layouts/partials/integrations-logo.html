@@ -40,9 +40,17 @@
 {{- if $imageExists -}}
     {{- $output_image = (printf "%s%s_%s%s" $img_url $basename $variant $extension) | safeURL -}}
 {{- else -}}
-    {{- if eq $ctx.Page.Language.Lang "en" -}}
-      {{- warnf "missing integration logo %q called from %q" $basename $ctx.Page.Permalink -}}
+    <!-- try to fallback to the static image -->
+    {{- $fname := print ($basename | lower) ".png" }}
+    {{- $src := (print "images/integrations_logos/" $fname) -}}
+    {{- if (fileExists (print "static/" $src)) -}}
+      {{- warnf "missing integration svg %q falling back to %q" $basename $fname -}}
+      {{- $output_image = (print site.Params.img_url $src) -}}
+    {{- else -}}
+      {{- if eq $ctx.Page.Language.Lang "en" -}}
+        {{- warnf "missing integration svg %q called from %q" $basename $ctx.Page.Permalink -}}
+        {{- $output_image = "" -}}
+      {{- end -}}
     {{- end -}}
-    {{- $output_image = "" -}}
 {{- end -}}
 {{- return $output_image -}}
