@@ -22260,6 +22260,21 @@
                   "items": {
                     "description": "Query for matching rule.",
                     "properties": {
+                      "agentRule": {
+                        "description": "Agent Rule.",
+                        "properties": {
+                          "agentRuleId": {
+                            "description": "The Agent Rule id, must be unique within the rule.",
+                            "example": "etc_shadow",
+                            "type": "string"
+                          },
+                          "expression": {
+                            "description": "A Runtime Security expression determines what activity should be collected by the Datadog agent.\nThese logical expressions can use predefined operators and attributes. Tags cannot be used in Runtime\nSecurity expressions (instead, allow/deny based on tags under the advanced option).",
+                            "type": "string"
+                          }
+                        },
+                        "type": "object"
+                      },
                       "aggregation": {
                         "description": "The aggregation type.",
                         "enum": [
@@ -22681,6 +22696,21 @@
             "items": {
               "description": "Query for matching rule.",
               "properties": {
+                "agentRule": {
+                  "description": "Agent Rule.",
+                  "properties": {
+                    "agentRuleId": {
+                      "description": "The Agent Rule id, must be unique within the rule.",
+                      "example": "etc_shadow",
+                      "type": "string"
+                    },
+                    "expression": {
+                      "description": "A Runtime Security expression determines what activity should be collected by the Datadog agent.\nThese logical expressions can use predefined operators and attributes. Tags cannot be used in Runtime\nSecurity expressions (instead, allow/deny based on tags under the advanced option).",
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                },
                 "aggregation": {
                   "description": "The aggregation type.",
                   "enum": [
@@ -23086,6 +23116,21 @@
       "SecurityMonitoringRuleQuery": {
         "description": "Query for matching rule.",
         "properties": {
+          "agentRule": {
+            "description": "Agent Rule.",
+            "properties": {
+              "agentRuleId": {
+                "description": "The Agent Rule id, must be unique within the rule.",
+                "example": "etc_shadow",
+                "type": "string"
+              },
+              "expression": {
+                "description": "A Runtime Security expression determines what activity should be collected by the Datadog agent.\nThese logical expressions can use predefined operators and attributes. Tags cannot be used in Runtime\nSecurity expressions (instead, allow/deny based on tags under the advanced option).",
+                "type": "string"
+              }
+            },
+            "type": "object"
+          },
           "aggregation": {
             "description": "The aggregation type.",
             "enum": [
@@ -23156,6 +23201,21 @@
       "SecurityMonitoringRuleQueryCreate": {
         "description": "Query for matching rule.",
         "properties": {
+          "agentRule": {
+            "description": "Agent Rule.",
+            "properties": {
+              "agentRuleId": {
+                "description": "The Agent Rule id, must be unique within the rule.",
+                "example": "etc_shadow",
+                "type": "string"
+              },
+              "expression": {
+                "description": "A Runtime Security expression determines what activity should be collected by the Datadog agent.\nThese logical expressions can use predefined operators and attributes. Tags cannot be used in Runtime\nSecurity expressions (instead, allow/deny based on tags under the advanced option).",
+                "type": "string"
+              }
+            },
+            "type": "object"
+          },
           "aggregation": {
             "description": "The aggregation type.",
             "enum": [
@@ -23468,6 +23528,21 @@
             "items": {
               "description": "Query for matching rule.",
               "properties": {
+                "agentRule": {
+                  "description": "Agent Rule.",
+                  "properties": {
+                    "agentRuleId": {
+                      "description": "The Agent Rule id, must be unique within the rule.",
+                      "example": "etc_shadow",
+                      "type": "string"
+                    },
+                    "expression": {
+                      "description": "A Runtime Security expression determines what activity should be collected by the Datadog agent.\nThese logical expressions can use predefined operators and attributes. Tags cannot be used in Runtime\nSecurity expressions (instead, allow/deny based on tags under the advanced option).",
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                },
                 "aggregation": {
                   "description": "The aggregation type.",
                   "enum": [
@@ -23789,6 +23864,21 @@
             "items": {
               "description": "Query for matching rule.",
               "properties": {
+                "agentRule": {
+                  "description": "Agent Rule.",
+                  "properties": {
+                    "agentRuleId": {
+                      "description": "The Agent Rule id, must be unique within the rule.",
+                      "example": "etc_shadow",
+                      "type": "string"
+                    },
+                    "expression": {
+                      "description": "A Runtime Security expression determines what activity should be collected by the Datadog agent.\nThese logical expressions can use predefined operators and attributes. Tags cannot be used in Runtime\nSecurity expressions (instead, allow/deny based on tags under the advanced option).",
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                },
                 "aggregation": {
                   "description": "The aggregation type.",
                   "enum": [
@@ -23847,6 +23937,21 @@
               "type": "string"
             },
             "type": "array"
+          }
+        },
+        "type": "object"
+      },
+      "SecurityMonitoringRuntimeAgentRule": {
+        "description": "Agent Rule.",
+        "properties": {
+          "agentRuleId": {
+            "description": "The Agent Rule id, must be unique within the rule.",
+            "example": "etc_shadow",
+            "type": "string"
+          },
+          "expression": {
+            "description": "A Runtime Security expression determines what activity should be collected by the Datadog agent.\nThese logical expressions can use predefined operators and attributes. Tags cannot be used in Runtime\nSecurity expressions (instead, allow/deny based on tags under the advanced option).",
+            "type": "string"
           }
         },
         "type": "object"
@@ -49879,6 +49984,21 @@
                             "items": {
                               "description": "Query for matching rule.",
                               "properties": {
+                                "agentRule": {
+                                  "description": "Agent Rule.",
+                                  "properties": {
+                                    "agentRuleId": {
+                                      "description": "The Agent Rule id, must be unique within the rule.",
+                                      "example": "etc_shadow",
+                                      "type": "string"
+                                    },
+                                    "expression": {
+                                      "description": "A Runtime Security expression determines what activity should be collected by the Datadog agent.\nThese logical expressions can use predefined operators and attributes. Tags cannot be used in Runtime\nSecurity expressions (instead, allow/deny based on tags under the advanced option).",
+                                      "type": "string"
+                                    }
+                                  },
+                                  "type": "object"
+                                },
                                 "aggregation": {
                                   "description": "The aggregation type.",
                                   "enum": [
@@ -50261,6 +50381,21 @@
                     "items": {
                       "description": "Query for matching rule.",
                       "properties": {
+                        "agentRule": {
+                          "description": "Agent Rule.",
+                          "properties": {
+                            "agentRuleId": {
+                              "description": "The Agent Rule id, must be unique within the rule.",
+                              "example": "etc_shadow",
+                              "type": "string"
+                            },
+                            "expression": {
+                              "description": "A Runtime Security expression determines what activity should be collected by the Datadog agent.\nThese logical expressions can use predefined operators and attributes. Tags cannot be used in Runtime\nSecurity expressions (instead, allow/deny based on tags under the advanced option).",
+                              "type": "string"
+                            }
+                          },
+                          "type": "object"
+                        },
                         "aggregation": {
                           "description": "The aggregation type.",
                           "enum": [
@@ -50606,6 +50741,21 @@
                       "items": {
                         "description": "Query for matching rule.",
                         "properties": {
+                          "agentRule": {
+                            "description": "Agent Rule.",
+                            "properties": {
+                              "agentRuleId": {
+                                "description": "The Agent Rule id, must be unique within the rule.",
+                                "example": "etc_shadow",
+                                "type": "string"
+                              },
+                              "expression": {
+                                "description": "A Runtime Security expression determines what activity should be collected by the Datadog agent.\nThese logical expressions can use predefined operators and attributes. Tags cannot be used in Runtime\nSecurity expressions (instead, allow/deny based on tags under the advanced option).",
+                                "type": "string"
+                              }
+                            },
+                            "type": "object"
+                          },
                           "aggregation": {
                             "description": "The aggregation type.",
                             "enum": [
@@ -51099,6 +51249,21 @@
                       "items": {
                         "description": "Query for matching rule.",
                         "properties": {
+                          "agentRule": {
+                            "description": "Agent Rule.",
+                            "properties": {
+                              "agentRuleId": {
+                                "description": "The Agent Rule id, must be unique within the rule.",
+                                "example": "etc_shadow",
+                                "type": "string"
+                              },
+                              "expression": {
+                                "description": "A Runtime Security expression determines what activity should be collected by the Datadog agent.\nThese logical expressions can use predefined operators and attributes. Tags cannot be used in Runtime\nSecurity expressions (instead, allow/deny based on tags under the advanced option).",
+                                "type": "string"
+                              }
+                            },
+                            "type": "object"
+                          },
                           "aggregation": {
                             "description": "The aggregation type.",
                             "enum": [
@@ -51457,6 +51622,21 @@
                     "items": {
                       "description": "Query for matching rule.",
                       "properties": {
+                        "agentRule": {
+                          "description": "Agent Rule.",
+                          "properties": {
+                            "agentRuleId": {
+                              "description": "The Agent Rule id, must be unique within the rule.",
+                              "example": "etc_shadow",
+                              "type": "string"
+                            },
+                            "expression": {
+                              "description": "A Runtime Security expression determines what activity should be collected by the Datadog agent.\nThese logical expressions can use predefined operators and attributes. Tags cannot be used in Runtime\nSecurity expressions (instead, allow/deny based on tags under the advanced option).",
+                              "type": "string"
+                            }
+                          },
+                          "type": "object"
+                        },
                         "aggregation": {
                           "description": "The aggregation type.",
                           "enum": [
@@ -51786,6 +51966,21 @@
                       "items": {
                         "description": "Query for matching rule.",
                         "properties": {
+                          "agentRule": {
+                            "description": "Agent Rule.",
+                            "properties": {
+                              "agentRuleId": {
+                                "description": "The Agent Rule id, must be unique within the rule.",
+                                "example": "etc_shadow",
+                                "type": "string"
+                              },
+                              "expression": {
+                                "description": "A Runtime Security expression determines what activity should be collected by the Datadog agent.\nThese logical expressions can use predefined operators and attributes. Tags cannot be used in Runtime\nSecurity expressions (instead, allow/deny based on tags under the advanced option).",
+                                "type": "string"
+                              }
+                            },
+                            "type": "object"
+                          },
                           "aggregation": {
                             "description": "The aggregation type.",
                             "enum": [
@@ -51965,6 +52160,58 @@
         "x-undo": {
           "type": "idempotent"
         }
+      }
+    },
+    "/api/v2/security_monitoring/runtime/policy/download": {
+      "get": {
+        "description": "The download endpoint will generate a Runtime Security policy file from your currently active\nRuntime Security rules, and download them as a .policy file. This file can then be deployed to\nyour agents to update the policy running in your environment.",
+        "operationId": "DowloadRuntimePolicyFile",
+        "responses": {
+          "200": {
+            "content": {
+              "application/yaml": {
+                "schema": {
+                  "format": "binary",
+                  "type": "string"
+                }
+              }
+            },
+            "description": "OK"
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "API error response.",
+                  "properties": {
+                    "errors": {
+                      "description": "A list of errors.",
+                      "items": {
+                        "description": "A list of items.",
+                        "example": "Bad Request",
+                        "type": "string"
+                      },
+                      "type": "array"
+                    }
+                  },
+                  "required": [
+                    "errors"
+                  ],
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Not Authorized"
+          }
+        },
+        "summary": "Get the latest Runtime Security policy",
+        "tags": [
+          "Security Monitoring"
+        ],
+        "x-undo": {
+          "type": "safe"
+        },
+        "x-unstable": "**Note**: This endpoint is in public beta.\nIf you have any feedback, contact [Datadog support](https://docs.datadoghq.com/help/)."
       }
     },
     "/api/v2/security_monitoring/signals": {
